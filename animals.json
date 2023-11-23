@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "nombre": "MichitoCoffe",
+      "imagen": "./images/image3.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Pugberto",
+      "imagen": "./images/image4.jpg"
+    },{
+      "id": 3,
+      "nombre": "Doggo",
+      "imagen": "./images/image5.jpg"
+    }
+  ]
+  

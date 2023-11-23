@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>CyberBook Secure</title>
+
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav1">
+                <div class="navbar-brand">
+                    <img class="logonavbar" src="images/logo.png">
+                </div>
+
+                <div class="searchdiv">
+                    <form action="resultados.php" method="post">
+                        <input class="inputsearch" id="search" name="search" type="text"
+                            placeholder="Buscar en CyberBook" maxlength="20" minlength="1" onkeyup="this.value=filtroNumLet(this.value)">
+                    </form>
+
+                </div>
+            </div>
+            <div class="nav2">
+                <a href="./index.html"><img class="iconNavbar" src="images/home.png"> </a>
+                <a><img class="iconNavbar" src="images/videos.png"> </a>
+                <a><img class="iconNavbar" src="images/market.png"> </a>
+                <a><img class="iconNavbar" src="images/grupo.png"> </a>
+                <a><img class="iconNavbar" src="images/match.png"> </a>
+            </div>
+            <div class="navbar-menu">
+                <a> <img class="iconNavbar" src="images/msj.png"> </a>
+                <a> <img class="iconNavbar" src="images/noti.png"> </a>
+                <a> <img class="iconNavbar" src="images/avatar.png"> </a>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="containerAll">
+        <div class="left">
+            <h5>My name</h5>
+            <br>
+            <h5>Friends</h5>
+            <br>
+            <h5>Events</h5>
+            <br>
+            <h5>Memories</h5>
+            <br>
+            <h5>Saves</h5>
+            <hr>
+        </div>
+        <!---->
+        <div class="center">
+
+            <div class="carrusel">
+                <div class="card shadow" style="width: 40rem; padding: 10px;">
+                    <h5 class="card-title">Michón | Michon@cyber</h5>
+                    <p class="card-text">Durando en el trabajo xd</p>
+
+                    <img src="./images/image1.jpg" class="card-img-top" alt="...">
+                    <p style="font-weight: 500;"> 5hrs ago</p>
+                    
+                    <hr>
+                    <div class="card-body">
+                        <p style="font-weight: bold;"> Send a message:</p>
+                        <form id="comentarioForm" action="procesar_comentario.php" method="post">
+                            <textarea class="form-control" id="inputcomen" name="inputcomen" placeholder="Escribe un mensaje..."></textarea>
+                            <button type="submit" class="btncomentar">Send</button>
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <div class="card shadow" style="width: 40rem; padding: 10px;">
+                    <h5 class="card-title">Hackeato | Hackeato13@cyber</h5>
+                    <p class="card-text"> Sacando cookies. </p>
+
+                    <img src="./images/image2.jpg" class="card-img-top" alt="...">
+                    <p style="font-weight: 500;"> 5hrs ago</p>
+                    <p style="font-weight: bold;"> Comments: </p>
+                    <div id="comentariosSection2">
+                        <!-- Aquí se mostrarán los comentarios -->
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <input type="text" class="form-control" name="inputcomen2" id="inputcomen2"
+                            placeholder="Comenta algo...">
+                        <button type="submit" class="btncomentar" onclick="agregarComentario2()">Send</button>
+                    </div>
+                </div>
+                <br>
+                <div class="card shadow" style="width: 40rem; padding: 10px;">
+                    <h5 class="card-title"> Firu | Firulais@cyber</h5>
+                    <p class="card-text"> Leyendo un poco. </p>
+
+                    <img src="./images/image6.jpg" class="card-img-top" alt="...">
+                    <p style="font-weight: 500;"> 5hrs ago</p>
+                    <p style="font-weight: bold;"> Comments: </p>
+                    <div id="comentariosSection3">
+                        <!-- Aquí se mostrarán los comentarios -->
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <input type="text" class="form-control" name="inputcomen3" id="inputcomen3"
+                            placeholder="Comenta algo...">
+                        <button type="submit" class="btncomentar" onclick="agregarComentario3()">Send</button>
+                    </div>
+                </div>
+                <br>
+
+            </div>
+        </div>
+        <div class="right">
+            <h5>Publicity</h5>
+            <br>
+            <h5>Birthdays</h5>
+            <br>
+            <h5>Contacts</h5>
+        </div>
+
+    </div>
+
+    <script>
+        //
+        function filtroNumLet(string) {
+        let out = '';
+        let filtro = '0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz ';
+        for (let i = 0; i < string.length; i++)
+            if (filtro.indexOf(string.charAt(i)) != -1)
+                out += string.charAt(i);
+        return out;
+        }
+
+        //
+    
+        function agregarComentario2() {
+            var comentario = document.getElementById("inputcomen2").value;
+
+            if (comentario.trim() !== "") {
+                // Obtener la hora actual
+                var fecha = new Date();
+                var hora = fecha.getHours();
+                var minutos = fecha.getMinutes();
+                var horaEnvio = hora + ":" + (minutos < 10 ? "0" + minutos : minutos);
+
+                // Crear nueva tarjeta para el comentario con la hora de envío
+                var nuevaTarjeta = document.createElement("div");
+                nuevaTarjeta.classList.add("card", "mt-3");
+
+                // Contenido de la tarjeta
+                nuevaTarjeta.innerHTML = `
+                    <div class="card-body">
+                        <p class="card-text">${comentario}</p>
+                        <small class="text-muted">${horaEnvio}</small>
+                    </div>
+                `;
+                // Utilizar textContent para evitar posibles ataques XSS
+                var cardText = nuevaTarjeta.querySelector('.card-text');
+                cardText.textContent = comentario;
+
+                // Agregar la nueva tarjeta al área de comentarios
+                document.getElementById("comentariosSection2").appendChild(nuevaTarjeta);
+
+                // Limpiar el input después de agregar el comentario
+                document.getElementById("inputcomen2").value = "";
+            }
+        }
+        function agregarComentario3() {
+            var comentario = document.getElementById("inputcomen3").value;
+
+            if (comentario.trim() !== "") {
+                // Obtener la hora actual
+                var fecha = new Date();
+                var hora = fecha.getHours();
+                var minutos = fecha.getMinutes();
+                var horaEnvio = hora + ":" + (minutos < 10 ? "0" + minutos : minutos);
+
+                // Crear nueva tarjeta para el comentario con la hora de envío
+                var nuevaTarjeta = document.createElement("div");
+                nuevaTarjeta.classList.add("card", "mt-3");
+
+                // Contenido de la tarjeta
+                nuevaTarjeta.innerHTML = `
+                    <div class="card-body">
+                        <p class="card-text">${comentario}</p>
+                        <small class="text-muted">${horaEnvio}</small>
+                    </div>
+                `;
+
+                // Agregar la nueva tarjeta al área de comentarios
+                document.getElementById("comentariosSection3").appendChild(nuevaTarjeta);
+
+                // Limpiar el input después de agregar el comentario
+                document.getElementById("inputcomen3").value = "";
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer>
+        <p>&copy; 2023 Cyberbook</p>
+    </footer>
+</body>
+
+
+</html>

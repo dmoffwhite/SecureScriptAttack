@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin: 0;
+
+}
+
+footer {
+    background-color: #282829;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.navbar {
+    background-color: #282829;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+}
+
+.nav1 {
+    gap: 10px;
+    align-items: center;
+    display: flex;
+}
+
+.nav2 {
+    gap: 10px;
+    display: flex;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+
+}
+
+.navbar a:hover {
+    background-color: #3e3e3f;
+    border-radius: 50px;
+}
+
+.navbar-menu {
+    display: flex;
+}
+
+.navbar-menu a {
+    margin-right: 10px;
+}
+
+.logonavbar {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-brand {
+    justify-content: left;
+}
+
+.searchdiv {
+    justify-content: left;
+
+}
+
+.inputsearch {
+    background-color: #444446;
+    border-radius: 40px;
+    border: none;
+    width: 300px;
+    height: 40px;
+    font-family: Arial, sans-serif;
+    padding-left: 20px;
+    color: aliceblue;
+    font-size: 15px;
+}
+
+.iconNavbar {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
+
+.iconNavbar:hover {
+    filter: brightness(3.5);
+    transition: filter 0.3s ease;
+}
+
+.containerAll {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.left {
+    width: auto;
+    vertical-align: top;
+}
+
+.right {
+    vertical-align: top;
+}
+
+.btncomentar {
+    background-color: rgb(18, 40, 167);
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 15px;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+.carrusel {
+    padding-right: 50px;
+    width: auto;
+    height: 600px;
+    overflow-y: auto;
+}
+ /* Estilo para la barra de desplazamiento vertical */
+ ::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para la barra de desplazamiento horizontal */
+::-webkit-scrollbar-horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    
+    background-color: #e0e0e0;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track:horizontal {
+    background-color: #f1f1f1;
+}
+
